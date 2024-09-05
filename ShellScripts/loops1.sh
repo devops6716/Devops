@@ -33,7 +33,7 @@ do
     echo "Checking if $PACKAGE is installed..." &>>$LOG_FILE
 
     # Check if the package is installed
-    yum list installed "$PACKAGE" &>>$LOG_FILE
+    if yum list installed | grep -q "$PACKAGE" &>>$LOG_FILE
     INSTALL_STATUS=$?
 
     if [ $INSTALL_STATUS -eq 0 ]; then
