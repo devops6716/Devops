@@ -10,12 +10,12 @@ N="\e[0m"
 echo " Script started at $TIMESTAMP" &>>$LOG_FILE
 VALIDATE(){
     if [ $1 -ne 0 ]
-then
-    echo -e "  Error.... $2  $R failed $N" 
-    exit 1
-else
-    echo -e "  $2 $G success $N"      
-fi
+    then
+        echo -e "  Error.... $2  $R failed $N" 
+        exit 1
+     else
+        echo -e "  $2 $G success $N"      
+    fi
 }
 if [ $ID -ne 0 ]
 then
@@ -30,7 +30,7 @@ do
     yum list installed $PACKAGE &>>$LOG_FILE
     if [ $? -ne 0 ]
     then    
-        yum install $PACKAGE -y 
+        yum install $PACKAGE -y &>>$LOG_FILE
         VALIDATE $? " installation of $PACKAGE"
     else
         echo "$PACKAGE is already installed"
