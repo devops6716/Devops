@@ -36,11 +36,12 @@ do
     if yum list installed | grep -q "$PACKAGE" &>>$LOG_FILE
     INSTALL_STATUS=$?
 
-    if [ $INSTALL_STATUS -eq 0 ]; then
-        echo "$PACKAGE is already installed"
-    else
-        echo "Installing $PACKAGE..." &>>$LOG_FILE
-        yum install "$PACKAGE" -y &>>$LOG_FILE
-        VALIDATE $? "Installation of $PACKAGE"
+        if [ $INSTALL_STATUS -eq 0 ]; then
+            echo "$PACKAGE is already installed"
+        else
+            echo "Installing $PACKAGE..." &>>$LOG_FILE
+            yum install "$PACKAGE" -y &>>$LOG_FILE
+            VALIDATE $? "Installation of $PACKAGE"
+        fi
     fi
 done
