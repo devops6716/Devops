@@ -18,7 +18,7 @@ else
     echo " You are root"
 fi
 
-yum install -y 
+yum install mysql -y 
 VALIDATE
 yum install git -y
 VALIDATE
