@@ -7,7 +7,7 @@ then
     echo " Error.... $2 failed"
     exit 1
 else
-    echo " $2 installation success"      
+    echo " $2  success"      
 fi
 }
 if [ $ID -ne 0 ]
