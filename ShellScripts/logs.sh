@@ -20,10 +20,10 @@ else
     echo " You are root"
 fi
 
-yum install mysql -y &>> $LOG_FILE
+yum install mysql -y &>>$LOG_FILE
 
 VALIDATE $? " Installing sql" 
 
-yum install git -y &>> $LOG_FILE
+yum install git -y &>>$LOG_FILE
 
 VALIDATE $? " Installing git"
