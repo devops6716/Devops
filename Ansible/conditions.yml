@@ -1,0 +1,12 @@
+# using when condition
+
+- name: conditions
+  hosts: localhost
+  tasks:
+    - name: check if user exists or not
+      ansible.builtin.command: id roboshop # passing command
+      register: user # storing output of the command in user variable
+    - name : printing the variable -value
+      ansible.builtin.debug:
+        msg: "user is : {{user}}"
+          
