@@ -3,10 +3,10 @@
   vars: 
     name: bulbul # normal key -value pair
     skills: # list datatype
-      -Devops
-      -shell
-      -ansible
-      -linux
+      - Devops
+      - shell
+      - ansible
+      - linux
     experience:
       Devops: 7
       Aws: 6
@@ -23,4 +23,4 @@
         msg: "experiance : {{experience}}"
     - name: prints bool -value
       ansible.builtin.debug:
-        msg: "is trainer: {{Trainer}"    
+        msg: "is trainer: {{Trainer}}"    
