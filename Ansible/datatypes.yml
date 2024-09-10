@@ -1,0 +1,26 @@
+- name: printing different datatypes
+  hosts: localhost
+  vars: 
+    name: bulbul # normal key -value pair
+    skills: # list datatype
+      -Devops
+      -shell
+      -ansible
+      -linux
+    experience:
+      Devops: 7
+      Aws: 6
+    Trainer: true
+  tasks:
+    - name: prints key-value
+      ansible.builtin.debug:
+        msg: "name is : {{name}}"  
+    - name: prints list
+      ansible.builtin.debug:
+        msg: "skills: {{skills}}"
+    - name: prints map
+      ansible.builtin.debug:
+        msg: "experiance : {{experience}}"
+    - name: prints bool -value
+      ansible.builtin.debug:
+        msg: "is trainer: {{Trainer}"    
