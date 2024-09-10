@@ -1,0 +1,8 @@
+# printing variables from inventory
+
+- name: variables at play level 
+  hosts: localhost  
+  tasks:  
+  - name: print the course 
+    ansible.builtin.debug:
+      msg: "course name is {{course}}, trainer is {{trainer}} and duration is {{duration}}"
