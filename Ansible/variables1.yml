@@ -1,0 +1,13 @@
+# passing variables at play level 
+
+- name: variables at play level 
+  hosts: localhost  
+  vars: 
+    course: "devops"
+    trainer: "bulbul"
+    duration: "1month"
+  tasks:  
+  - name: print the course 
+    ansible.builtin.debug:
+      msg: "course name is {{course}}, trainer is {{trainer}} and duration is {{duration}}"
+      
