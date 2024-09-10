@@ -13,4 +13,9 @@
 
     - name: printing exit status 
       ansible.builtin.debug:
-        msg: "exit status is: {{user.rc}}"    
+        msg: "exit status is: {{user.rc}}"    # exit status is 1 if user is not present
+
+    - name: create user 
+      ansible.builtin.user:
+        name: roboshop
+        when: user.rc !=0  # if rc is 1 then create user   
