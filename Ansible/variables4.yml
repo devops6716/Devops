@@ -3,12 +3,12 @@
 - name: variable declaring with prompts
   hosts: localhost
   vars_prompts:
-   - name: username
-     prompt: please enter username
-     private: false
-   - name: password
-     prompt: please enter password
-     private: true
+    - name: username
+      prompt: please enter username
+      private: false
+    - name: password
+      prompt: please enter password
+      private: true
   tasks:
     - name: "print variables from arguments"
       ansible.builtin.debug:
