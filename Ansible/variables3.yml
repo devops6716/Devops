@@ -1,0 +1,11 @@
+# declaring variables from variables file, variables.yml
+
+- name: declaring variables from variables file
+  hosts: localhost
+  vars_files:
+    variables.yml
+  tasks:
+  - name: print variables from variables file"
+    ansible.builtin.debug:
+      msg: "course name is {{course}}, trainer is {{trainer}} and duration is {{duration}}"
+
