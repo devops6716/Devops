@@ -1,6 +1,6 @@
 - name: multi play1
   hosts: localhost
-  task: 
+  tasks: 
   - name: play1 and task1
     ansible.builtin.debug:
       msg: "Hello from play1 and task1"
@@ -8,7 +8,7 @@
 
 - name: play2
   hosts: localhost
-  task:
+  tasks:
   - name: play2 and task2
     ansible.builtin.debug:
       msg: "Hello from play2 and task2"        
