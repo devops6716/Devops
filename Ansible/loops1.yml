@@ -1,0 +1,11 @@
+# creating a basic loop displaying names of people
+
+- name: loops
+  hosts: localhost
+  tasks:
+    - name: print the loops
+      ansible.builtin.debug:
+        msg: " person name is: {{item}}"
+      loop:
+        - karthik
+        - bulbul  
