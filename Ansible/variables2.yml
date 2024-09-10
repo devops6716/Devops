@@ -10,8 +10,8 @@
   tasks:  
   - name: print the course 
     vars:  # passing variable in task level which overrides play level vriables
-    course: "devops -task"
-    trainer: "bulbul -task"
-    duration: "1month-task"
+      course: "devops -task"
+      trainer: "bulbul -task"
+      duration: "1month-task"
     ansible.builtin.debug:
       msg: "course name is {{course}}, trainer is {{trainer}} and duration is {{duration}}"
