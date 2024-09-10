@@ -1,0 +1,17 @@
+# passing variables at task level
+## variables in task level ovveride variables at play level 
+
+- name: variables at play level 
+  hosts: localhost  
+  vars:  # passing variable in play level 
+    course: "devops"
+    trainer: "bulbul"
+    duration: "1month"
+  tasks:  
+  - name: print the course 
+    vars:  # passing variable in task level which overrides play level vriables
+    course: "devops -task"
+    trainer: "bulbul -task"
+    duration: "1month-task"
+    ansible.builtin.debug:
+      msg: "course name is {{course}}, trainer is {{trainer}} and duration is {{duration}}"
