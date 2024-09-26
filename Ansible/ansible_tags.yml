@@ -1,0 +1,14 @@
+- name: tags
+  hosts: localhost
+  tasks:
+  - name: print
+    debug:
+      msg: "hello bulbul"
+    tags:
+    - bulbul
+
+  - name: print
+    debug:
+      msg: "hello karthik"
+    tags:
+    - karthik        
